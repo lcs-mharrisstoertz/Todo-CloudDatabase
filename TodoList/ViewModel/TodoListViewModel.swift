@@ -29,6 +29,7 @@ class TodoListViewModel {
             let results: [TodoItem] = try await supabase
                 .from("todos")
                 .select()
+                .order("id", ascending: true)
                 .execute()
                 .value
             
@@ -78,12 +79,51 @@ class TodoListViewModel {
     }
     
     func delete(_ todo: TodoItem) {
-        
-        // Remove the provided to-do item from the array
-        todos.removeAll { currentItem in
-            currentItem.id == todo.id
+            
+            // Create a unit of asynchronous work to add the to-do item
+            Task {
+                
+                do {
+                    
+                    // Run the delete command
+                    try await supabase
+                        .from("todos")
+                        .delete()
+                        .eq("id", value: todo.id!)  // Only delete the row whose id
+                        .execute()                  // matches that of the to-do being deleted
+                    
+                    // Update the list of to-do items held in memory to reflect the deletion
+                    try await self.getTodos()
+
+                } catch {
+                    debugPrint(error)
+                }
+                
+                
+            }
+                    
         }
-        
-    }
+    
+    func update(todo updatedTodo: TodoItem) {
+           
+           // Create a unit of asynchronous work to add the to-do item
+           Task {
+               
+               do {
+                   
+                   // Run the update command
+                   try await supabase
+                       .from("todos")
+                       .update(updatedTodo)
+                       .eq("id", value: updatedTodo.id!)   // Only update the row whose id
+                       .execute()                          // matches that of the to-do being deleted
+                       
+               } catch {
+                   debugPrint(error)
+               }
+               
+           }
+           
+       }
     
 }
