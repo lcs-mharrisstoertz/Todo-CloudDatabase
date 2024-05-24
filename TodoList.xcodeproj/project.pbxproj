@@ -20,6 +20,7 @@
 		CC799F312BFE3EBE00A55045 /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = CC799F302BFE3EBE00A55045 /* Realtime */; };
 		CC799F332BFE3EBE00A55045 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = CC799F322BFE3EBE00A55045 /* Storage */; };
 		CC799F352BFE3EBE00A55045 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = CC799F342BFE3EBE00A55045 /* Supabase */; };
+		CC799F372C000F8400A55045 /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC799F362C000F8400A55045 /* Supabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		815D9D802BC413810050957E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		815D9D832BC413810050957E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC799F272BFD241E00A55045 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
+		CC799F362C000F8400A55045 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		815D9D8C2BC414270050957E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CC799F362C000F8400A55045 /* Supabase.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				815D9D7F2BC413800050957E /* LandingView.swift in Sources */,
+				CC799F372C000F8400A55045 /* Supabase.swift in Sources */,
 				814A08FC2BC41BC500921E4F /* ItemView.swift in Sources */,
 				814A08FE2BC41C7800921E4F /* TodoItem.swift in Sources */,
 				815D9D7D2BC413800050957E /* TodoListApp.swift in Sources */,
